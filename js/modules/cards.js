@@ -1,6 +1,19 @@
 function cards(){
     //                                                       Используем классы для создание карточек меню
-
+    async function getResource(url){
+        const res=await fetch(url);
+        if (!res.ok){
+            throw new Error(`${url}, status:${res.status}`);
+        }
+        return await res.json();
+    }
+    // const getResource=async(url)=>{
+    //     const res=await fetch(url);
+    //     if (!res.ok){
+    //         throw new Error(`${url}, status:${res.status}`);
+    //     }
+    //     return await res.json();
+    // };
     class MenuCard {
         constructor(src, alt, title, descr, price, parentSelector, ...classes) {
             this.src = src;
@@ -40,13 +53,7 @@ function cards(){
             this.parent.append(element);
         }
     }
-    const getResource=async(url)=>{
-        const res=await fetch(url);
-        if (!res.ok){
-            throw new Error(`${url}, status:${res.status}`);
-        }
-        return await res.json();
-    };
+
     getResource('http://localhost:3000/menu')
     .then (data=>{
         data.forEach(({img,altimg,title,descr,price})=>{
