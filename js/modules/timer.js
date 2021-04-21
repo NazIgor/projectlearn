@@ -1,6 +1,6 @@
-function timer(){
+function timer(deadline){
     // Timer
-    const deadline = '2020-12-05';
+
     const endDate = new Date(Date.parse(deadline)),
           month=['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'],
           promoDescription=document.querySelector('.promotion__descr');
@@ -70,4 +70,4 @@ function timer(){
 
     setClock('.timer', deadline);
 }
-module.exports=timer;
+export default timer;

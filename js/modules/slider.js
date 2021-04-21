@@ -1,19 +1,10 @@
+import {getResource} from '../services/services';
+import {getZero} from '../services/services';
+
+
 function slider(){
     ////                                                        slider ////////
-    async function getResource(url){
-        const res=await fetch(url);
-        if (!res.ok){
-            throw new Error(`${url}, status:${res.status}`);
-        }
-        return await res.json();
-    }
-    function getZero(num){
-        if (num >= 0 && num < 10) { 
-            return '0' + num;
-        } else {
-            return num;
-        }
-    }
+   
     const btnPrev=document.querySelector('.offer__slider-prev'),
           btnNext=document.querySelector('.offer__slider-next'),
           btnPrevImg=document.createElement('img'),
@@ -121,4 +112,5 @@ function slider(){
         indData[activeIndicator].style.opacity='1'; 
     }
 }
-module.exports=slider;
+
+export default slider;

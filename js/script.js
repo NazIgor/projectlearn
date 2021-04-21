@@ -1,11 +1,13 @@
+import calc from './modules/calc';
+import cards from './modules/cards';
+import form from './modules/form';
+import modal from './modules/modal';
+import slider from './modules/slider';
+import tabs from './modules/tabs';
+import timer from './modules/timer';
+
 window.addEventListener('DOMContentLoaded', function() {
-    const calc=require('./modules/calc'),
-          cards=require('./modules/cards'),
-          form=require('./modules/form'),
-          modal=require('./modules/modal'),
-          slider=require('./modules/slider'),
-          tabs=require('./modules/tabs'),
-          timer=require('./modules/timer');
+
 
     tabs();
     cards();
@@ -13,6 +15,6 @@ window.addEventListener('DOMContentLoaded', function() {
     form();
     modal();
     slider();   
-    timer();
+    timer('2021-08-05');
 
 });
